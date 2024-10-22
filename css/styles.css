@@ -1,0 +1,794 @@
+@import url('https://fonts.googleapis.com/css2?family=Lustria&display=swap');
+/* //////////7ESTILOS GENERALES//////////77 */
+:root {
+    --primary-color: #222224;
+    --primary-color-dark: #EABE3F;
+    --text-dark: #0c0a09;
+    --text-light: #6c7478;
+    --white: #ffffff;
+    --max-width: 1200px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+    display: flex;
+}
+
+a {
+    text-decoration: none;
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+}
+body{
+    font-family: "Lustria", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+nav {
+    position: fixed;
+    isolation: isolate;
+    top: 0;
+    width: 100%;
+    max-width: var(--max-width);
+    margin: auto;
+    z-index: 9;
+}
+/* ESTILO DEL CONTENEDOR DEL SCROLL*/
+::-webkit-scrollbar {
+    width: 10px; 
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--white); /* Color del fondo de la barra */
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--text-light); /* Color del pulgar de la barra */
+    border-radius: 5px; /* Bordes redondeados para el pulgar */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color-dark); /* Color cuando el pulgar está en hover */
+}
+/* //////////////////////////////////////777 */
+
+
+
+
+.section_container {
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 5rem 1rem;
+}
+
+.section_subheader {
+    margin-bottom: 0.5rem;
+    position: relative;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: var(--text-dark);
+}
+
+.section_subheader::after {
+    position: absolute;
+    content: "";
+    top: 50%; 
+    transform: translate(1rem, -50%);
+    height: 2px;
+    width: 4rem;
+    background-color: var(--primary-color);
+}
+
+.section_header {
+    max-width: 600px;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 3rem;
+    color: var(--text-dark);
+}
+
+.section_description {
+    max-width: 600px;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+}
+
+.btn{
+    padding: 0.75rem 1.5rem;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--white);
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--primary-color-dark);
+}
+
+.logo {
+    max-width: 100px;
+}
+
+.header {
+    background-image: url("/WebHotel/imgs/header.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.nav_bar {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    background-color: var(--primary-color);
+}
+
+.nav_menu_btn {
+    font-size: 1.5rem;
+    color: var(--white);
+    cursor: pointer;
+}
+
+.nav_links {
+    list-style: none;
+    position: absolute;
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: rgba(37, 37, 30, 0.9);
+    transform: translateY(-100%);
+    transition: 0.5s;
+    z-index: -1;
+}
+
+.nav_links.open {
+    transform: translateY(0);
+}
+
+.nav_links a {
+    position: relative;
+    isolation: isolate;
+    padding-bottom: 8px;
+    color: var(--white);
+    transition: 0.3s;
+}
+
+
+.nav_reserv {
+    display: none;
+}
+
+.header_container{
+    padding-block: 10rem 15rem;
+}
+
+.header_container p{
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: var(--white);
+    text-align: center;
+    opacity: 0.6;
+}
+
+.header_container h1{
+    font-size: 4rem;
+    font-weight: 500;
+    line-height: 4.5rem;
+    color:var(--white);
+    text-align: center;
+
+}
+
+.header_container h1 span{
+    color: var(--primary-color-dark);
+}
+
+.booking_container {
+    padding-block: 0;
+}
+
+.booking_form {
+    padding: 2rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: var(--white);
+    border-radius: 10px;
+    transform: translateY(-50%);
+    box-shadow: 5px 5px 20px rgba(197, 172, 11, 0.1);
+}
+
+.input_group {
+    flex: 1 1 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+
+.input_group span {
+    font-size: 1.75rem;
+    color: var(--primary-color);
+}
+
+.input_group label {
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.input_group input {
+    display: block;
+    width: 100%;
+    max-width: 150px;
+    padding-block: 5px;
+    color: var(--text-dark);
+    font-size: 0.9rem;
+    outline: none;
+    border: none;
+}
+
+.input_group input::placeholder {
+    color: var(--text-light);
+}
+
+.about_container {
+    overflow: hidden;
+    display: grid;
+    gap: 2rem;
+}
+.about_image img {
+    max-width: 450px;
+    margin: auto;
+    border-radius: 5px;
+}
+
+
+
+
+
+
+
+/*////////////////FOOTER  PIE DE PAGINA////////////////////*/
+footer{
+    background-color: var(--text-dark);
+    bottom: 0;  
+    left: 0;
+    position: relative;
+    width: 100%;
+}
+/* FOOTER LOGO Y METODOS DE PAGO*/
+    .footersection {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 10px 10px  ; 
+    }
+    .footersection1_container--left,
+    .footersection1_container--rigth {
+        justify-content: center;
+        align-items: center;
+        color:#fff;
+    }
+    .container_pagoimg{
+        width: 225px;
+        margin:0px auto;
+    }
+    .logo1{
+        width: 120px;
+        margin: 0 auto;
+        margin-bottom: 7px;
+        
+    }
+
+/* ///FOOTER REDES SOCIALES/*/
+    .footersection_social {
+        text-align: center;
+        background-color:#222224;
+        color:#fff;
+        padding-bottom: 10px;
+        font-size: 15px;
+    }
+    .footersection_social div{
+        padding-top: 10px;
+    }
+    .footersection_social a{
+        border: 1px solid #dddddd;
+        border-radius: 40%;
+        display: inline-flex;
+        justify-content: center;
+        color: var(--primary-color-dark);
+        align-items: center;
+        margin: 0 5px;
+        height: 35px;
+        width: 35px;
+        vertical-align: middle;
+        transition: 0.3s ease-in-out;
+    }
+
+/* LINKS DE ACCESO RAPIDO PARA HOTEL EMPIRE, CONTACTOS, ATENCION AL CLIENTE */
+    .footer_col {
+        position: relative;
+        padding: 5px 0; 
+        cursor: pointer;
+    }
+    .title {color: var(--white);
+        display: flex; 
+        justify-content: space-between;
+        align-items: center; 
+        cursor: pointer; 
+        padding: 12px;
+    }
+    .title_edit {
+        font-size: 20px; 
+        text-align: left; 
+        margin: 0; 
+    }
+    .nav_link {
+        cursor: pointer;
+        color: var(--primary-color-dark);
+        font-size: 25px;
+    }
+    .footer_links {
+        list-style: none; 
+        padding: 0; 
+        margin: 10px 0 0 10px;
+        transition: 0.3s ease-out; 
+        display: none; /* Oculta los enlaces inicialmente */
+    }
+    .footer_links li a {
+    color: white; 
+    text-decoration: none; 
+    }
+    .footer_links li  {
+    margin-bottom: 11px;
+    }
+    .footer_links li a:hover {
+        color: var(--primary-color-dark);
+        transition: 0.3s;
+    }
+    .footer_links.show{
+        display: block; /* Muestra los enlaces al hacer clic */
+    }
+    
+/* FOOTER TERMINOS Y POLITICAS*/
+    .footersection3_container {
+        border-top: 2px solid #333;
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 5px;
+        text-align: center;
+        border-bottom:2px solid #333;
+    }
+
+    .footersection3_container--line {
+        display: block;
+    }
+
+    .footersection3_container--link {
+        color: #fff;
+        text-decoration: none;
+        font-size: 12px;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .footersection3_container--link:hover {
+        color: var(--primary-color-dark);
+        transition: 0.3s;
+    }
+/*---FOOTER FINAL DERECHOS RESERVADOS */
+    .footersection3_container--text p {
+        font-size: 12px;
+        color: #aaa;
+        text-align: center;
+        padding-top: 10px;
+        padding-left: 10x;
+        padding-right: 10px;
+        padding-bottom: 10px;
+    }
+/*///////////////7FINAL FOOTER//////////////777 */
+
+
+/*//////////// PAGINA HABITACIONES ///////////777 */
+
+
+.service {
+    background-image: url("/WebHotel/imgs/service.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.service_container {
+    padding-block: 0;
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.service_content {
+    grid-column: 1/3;
+    padding: 2rem 4rem;
+    background-color: var(--white);
+  }
+
+  .service_list {
+    list-style: none;
+    margin-top: 2rem;
+    display: grid;
+    gap: 2rem;
+  }
+  
+  .service_list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-dark);
+  }
+  
+  .service_list span {
+    padding: 5px 12px;
+    font-size: 1.75rem;
+    color: var(--text-dark);
+    background-color: var(--text-light);
+    border-radius: 100%;
+  }
+  
+  .service_list li:nth-child(1) span {
+    color: #60a5fa;
+    background-color: #dbeafe;
+  }
+  
+  .service_list li:nth-child(2) span {
+    color: #f472b6;
+    background-color: #fce7f3;
+  }
+  
+  .service_list li:nth-child(3) span {
+    color: #c084fc;
+    background-color: #f3e8ff;
+  }
+  
+  .service_list li:nth-child(4) span {
+    color: #fb7185;
+    background-color: #ffe4e6;
+  }
+
+/*----Habitacion///777 */
+.room_grid {
+    margin-top: 4rem;
+    display: grid;
+    gap: 1rem;
+}
+
+.room_card {
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+.room_card_image {
+    position: relative;
+    overflow: hidden;
+}
+.room_card_icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.room_card_details {
+    padding: 1rem;
+}
+
+.room_card h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+    font-weight: 900;
+    color:var(--primary-color-dark);
+}
+
+.room_card h4::after{
+    content: "";
+    top: 50%; 
+    transform: translate(1rem, -50%);
+    height: 2px;
+    width: 4rem;
+    background-color: var(--primary-color);
+}
+
+.room_card p {
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+}
+
+.room_card h5 {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-light);
+}
+
+.room_card h5 span {
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: var(--primary-color-dark);
+}
+
+
+
+/* lista de img del room al dar clik en ver màs */
+
+
+
+.room_card_image .list_room_image{
+    width: max-content;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    transition: left 0.5s ease; /* Transición suave */
+    position: relative; /* Necesario para mover con left */
+    width: 100%; /* Ajusta el ancho según el contenedor */
+}
+
+
+.room_card_image  .list_room_image img{
+    width: 500px;
+    max-width: 100vw;
+    height: 100%;
+    object-fit: cover;  
+}
+.room_card_image  .buttons{
+    position: absolute;
+    top: 45%;
+    left: 5%;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+.room_card_image  .buttons button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff5;
+    color: #fff;
+    border: none;
+    font-family: monospace;
+    font-weight: bold;
+}
+.room_card_image  .dots{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    color: #fff;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+.room_card_image  .dots li{
+    list-style: none;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    margin: 10px;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+.room_card_image  .dots li.active{
+    width: 30px;
+}
+
+/* final*/
+
+
+
+.grupo {
+    display: none; /* Ocultar por defecto */
+    justify-content: center;
+    gap: 50px; /* Espacio entre los íconos */
+    text-align: center;
+}
+
+#radio1:checked ~ #grupo1,
+#radio2:checked ~ #grupo2 {
+    display: flex; /* Mostrar el grupo correspondiente */
+}
+
+.service_icon {
+    display: flex;
+    flex-direction: column; /* Alinear elementos verticalmente */
+    align-items: center;    /* Centrar ícono y texto */
+}
+
+.service_icon .material-symbols-outlined {
+    font-size: 30px; /* Tamaño del ícono */
+    color: #333;     /* Color del ícono */
+    margin-bottom: 3.3px; /* Espacio entre el ícono y el texto (ajustado) */
+}
+
+.service_icon i {
+    font-size: 30px; /* Tamaño del ícono de Font Awesome */
+    color: #333;     /* Color del ícono */
+    margin-bottom: 5px; /* Espacio entre el ícono y el texto */
+}
+
+.service_icon p {
+    margin-top: 5px; /* Espacio superior entre el ícono y el texto (ajustado) */
+    color: #333;      /* Color del texto */
+    font-size: 16px;  /* Tamaño del texto */
+}
+
+
+.indicadores {
+    display: flex;
+    gap: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+label {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    display: none; /* Ocultar los radios */
+}
+
+#radio1:checked ~ .indicadores label[for="radio1"],
+#radio2:checked ~ .indicadores label[for="radio2"] {
+    background-color: #f39c12; /* Color del indicador seleccionado */
+}
+
+
+.room_card_details_text{
+    text-align: center;
+    margin: 10px;
+}
+
+.room_card h6{
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+}
+
+.see_more{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.see_more_text{
+    margin-top: 4px;
+}
+
+.see_more_details{
+    display: none; /* Oculta los enlaces inicialmente */    
+}
+
+.see_more_details:hover{
+    transition: 0.3s;
+}
+
+.see_more_details.active{
+    display: block; /* Ajusta esto según el contenido */
+}
+/*//////////// PAGINA HABITACIONES FINAL ///////////777 */
+
+
+@media (width > 576px) {
+    .room_grid {
+    grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer_container {
+    grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (width > 768px) {
+    nav {
+        padding: 2rem 1rem;
+        position: static;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .nav_bar{
+        padding: 0;
+        background-color: transparent;
+    }
+
+    .nav_menu_btn{
+        display: none;
+    }
+
+.nav_links{
+        padding: 0;
+        width: unset;
+        position: static;
+        transform: none;
+        flex-direction: row;
+        background-color: transparent;
+    }
+
+    .nav_reserv {
+        display: block;
+    }
+
+.nav_links a::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: var(--white);
+    transition: 0.3s;
+    transform-origin: left;
+}
+.nav_links a:hover::after{
+        width: 100%;
+    }
+    .about_container{
+        grid-template-columns: repeat(2,1fr);
+        align-items: center;
+    }
+
+    .room_grid{
+        grid-template-columns: repeat(3,1fr);
+    }
+
+    .service_content {
+        grid-column: 2/3;
+}
+    
+
+}
+
+
+
+@media (width >1024){
+    .room_grid {
+        gap: 2rem;
+    }
+}
+
